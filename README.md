@@ -1,10 +1,59 @@
 # Books API Version-1
 
-## Description
-
 The Books API provides a comprehensive set of endpoints to interact with a collection of books. It allows users to perform various operations related to books, including creating new books, retrieving book details, updating book information, and deleting books.
 
-## Endpoints
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Endpoint Version-1](#endpoint-version-1)
+- [Drawbacks of Not Using Authentication](#drawbacks-of-not-using-authentication)
+- [Decisions and Assumptions](#decisions-and-assumptions)
+- [Books API Version 2](#books-api-version-2)
+  - [New Features](#new-features)
+  - [Endpoints Version-2](#endpoints-version-2)
+
+## Getting Started
+
+These instructions will help you set up and run the project locally.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) installed on your system
+- [Git](https://git-scm.com/) installed on your system
+
+### Installation
+
+1. Clone the GitHub repository to your local machine:
+
+   ```bash
+   git clone https://github.com/hafeez25/books_api.git
+   cd books_api
+   npm install
+   ```
+
+2. Create a new `.env` file in your project directoy and setup according to the `.env.example` file:
+
+   ```
+      PORT=5000
+      JWT_SECRET=your_jwt_secret
+      MONGO_URI=your_mongodb_uri
+      CLOUD_NAME=your_cloudinary_cloud_name
+      API_KEY=your_cloudinary_api_key
+      API_SECRET=your_cloudinary_api_secret
+   ```
+
+### Usage
+
+1. Start the application by running the following command in your project directory:
+
+   ```bash
+   node server.js
+   ```
+
+## Endpoint Version-1
 
 ### Create a Book
 
@@ -53,7 +102,7 @@ Successful responses return the requested data or a success message with appropr
 
 In case of errors, the API responds with error messages and the appropriate HTTP status codes (e.g., 400 Bad Request for client errors, 404 Not Found for resource not found, and 500 Internal Server Error for server errors).
 
-## Drawbacks of Not Using Authentication in
+## Drawbacks of Not Using Authentication
 
 Not using authentication in the Books API can lead to several security and operational drawbacks, including:
 
@@ -69,16 +118,40 @@ Not using authentication in the Books API can lead to several security and opera
 
 6. **Compliance Requirements:** Many industries and regulations require authentication and user access control to comply with data protection and privacy regulations. Neglecting authentication may result in non-compliance with legal requirements.
 
-# Book API Version 2
+## Decisions and Assumptions
 
-Welcome to the Book API Version 2 documentation. This API offers an enhanced experience for managing books and user interactions.
+During the development process of my API, I made several key decisions and assumptions to enhance its functionality and user experience. These decisions include:
+
+**1. Implementation of the Book Search Feature:**
+
+- Decision: I decided to implement a robust book search feature to improve user accessibility and enable efficient content retrieval.
+- Assumption: I assumed that users would benefit from a search functionality to find books based on various criteria, enhancing their overall experience.
+
+**2. Implementation of User Authentication:**
+
+- Decision: I incorporated user authentication to safeguard user data and provide controlled access to sensitive API endpoints.
+- Assumption: I assumed that authentication is essential to ensure data privacy and security, allowing only authorized users to interact with the API.
+
+**3. Implementation of Book Cover Image Handling:**
+
+- Decision: I included book cover image handling to enhance the visual experience of my users by providing visual representations of books.
+- Assumption: I assumed that visual content, such as book cover images, can greatly improve user engagement and book selection.
+
+These decisions have been integral in shaping the capabilities and user-friendliness of my API. While they were based on assumptions and requirements, I will continue to validate and refine these features through testing and user feedback to ensure they meet user expectations.
+
+# Books API Version 2
+
+Welcome to the Books API Version 2 documentation. This API offers an enhanced experience for managing books and user interactions.
 
 ## New Features
 
 - **User Authentication**: Securely register and log in to access the API's features.
-- **Book Management**: Create, retrieve, update, and delete book records with enhanced functionality.
 - **Book Search**: Easily search for books within the database to find the information you need.
 - **Book Cover Images**: Attach book cover images to enhance the visual representation of books.
+
+**Note:** All new features are implemented in the `dev` branch
+
+## Endpoints Version-2
 
 ## User Authentication
 
@@ -103,7 +176,7 @@ Authenticate an existing user by providing their email and password.
   - `email` (string) - The user's email address.
   - `password` (string) - The user's password.
 
-## Search Books
+### Search Books
 
 Search for books in the database
 
