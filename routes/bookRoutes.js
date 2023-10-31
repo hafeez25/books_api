@@ -4,10 +4,10 @@ const bookController = require("../controllers/bookController");
 const { upload } = require("../utils/fileUpload");
 
 router.post("/", upload.single("image"), bookController.createBook);
+router.get("/search", bookController.searchBook);
 router.get("/", bookController.getAllBooks);
 router.get("/:id", bookController.getBookById);
 router.patch("/:id", upload.single("image"), bookController.updateBook);
 router.delete("/:id", bookController.deleteBook);
-router.get("/search", bookController.searchBook);
 
 module.exports = router;

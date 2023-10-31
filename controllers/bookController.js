@@ -165,8 +165,8 @@ const searchBook = async (req, res) => {
     // Search for books with matching title or author
     const searchResults = await Book.find({
       $or: [
-        { title: { $regex: query, $options: "i" } }, // Case-insensitive title search
-        { author: { $regex: query, $options: "i" } }, // Case-insensitive author search
+        { title: { $regex: query, $options: "i" } },
+        { author: { $regex: query, $options: "i" } },
       ],
     });
 
