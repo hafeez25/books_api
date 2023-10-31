@@ -14,6 +14,9 @@ const bookSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please add summary!"],
   },
+  imageURL: {
+    type: String, // Store the book cover image URL as a string
+  },
 });
 
 // Create a Book model from the schema
