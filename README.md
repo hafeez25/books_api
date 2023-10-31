@@ -69,4 +69,47 @@ Not using authentication in the Books API can lead to several security and opera
 
 6. **Compliance Requirements:** Many industries and regulations require authentication and user access control to comply with data protection and privacy regulations. Neglecting authentication may result in non-compliance with legal requirements.
 
-To ensure the security and integrity of your Books API, it is strongly recommended to implement authentication mechanisms that restrict access to authorized users only. Proper authentication helps protect sensitive data, maintain control over API operations, and ensure compliance with legal and regulatory requirements.
+# Book API Version 2
+
+Welcome to the Book API Version 2 documentation. This API offers an enhanced experience for managing books and user interactions.
+
+## New Features
+
+- **User Authentication**: Securely register and log in to access the API's features.
+- **Book Management**: Create, retrieve, update, and delete book records with enhanced functionality.
+- **Book Search**: Easily search for books within the database to find the information you need.
+- **Book Cover Images**: Attach book cover images to enhance the visual representation of books.
+
+## User Authentication
+
+### Register a New User
+
+Create a new user account by providing the necessary information.
+
+- **Endpoint:** `/api/v2/auth/register`
+- **Method:** `POST`
+- **Request Body:**
+  - `email` (string) - The user's email address.
+  - `name` (string) - The user's name.
+  - `password` (string) - The user's password.
+
+### User Login
+
+Authenticate an existing user by providing their email and password.
+
+- **Endpoint:** `/api/v2/auth/login`
+- **Method:** `POST`
+- **Request Body:**
+  - `email` (string) - The user's email address.
+  - `password` (string) - The user's password.
+
+## Search Books
+
+Search for books in the database
+
+- **Endpoint:** `/api/v2/books/search?query={}`
+- **Method:** `GET`
+- **Parameters:**
+  - `query` (string) - The search query.
+
+---
