@@ -6,7 +6,7 @@ const createBook = async (req, res) => {
     const { title, author, summary } = req.body;
 
     // Check if any of the required fields are missing
-    if (!title.trim() || !author.trim() || !summary.trim()) {
+    if (!title || !author || !summary) {
       res.status(400);
       return res.json({
         message:
