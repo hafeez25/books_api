@@ -13,9 +13,9 @@ require("dotenv").config();
 const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
-  cloud_name: "dfxnk6tco",
-  api_key: "463593948158924",
-  api_secret: "MpW2UOnBa4tlHe1icA7b73d6BVE",
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
 });
 
 // Connect to Database

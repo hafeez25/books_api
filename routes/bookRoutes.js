@@ -8,5 +8,6 @@ router.get("/", bookController.getAllBooks);
 router.get("/:id", bookController.getBookById);
 router.patch("/:id", upload.single("image"), bookController.updateBook);
 router.delete("/:id", bookController.deleteBook);
+router.get("/search", bookController.searchBook);
 
 module.exports = router;

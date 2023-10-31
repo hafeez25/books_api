@@ -152,10 +152,38 @@ const deleteBook = async (req, res) => {
   }
 };
 
+// 6- Search for books by title or author name
+const searchBook = async (req, res) => {
+  try {
+    const { query } = req.query;
+
+    if (!query) {
+      res.status(400);
+      return res.json({ message: "Please provide a search query." });
+    }
+
+    // Search for books with matching title or author
+    const searchResults = await Book.find({
+      $or: [
+        { title: { $regex: query, $options: "i" } }, // Case-insensitive title search
+        { author: { $regex: query, $options: "i" } }, // Case-insensitive author search
+      ],
+    });
+
+    res.status(200);
+    return res.json(searchResults);
+  } catch (err) {
+    console.error(err);
+    res.status(500);
+    return res.json({ message: "Something went wrong during the search." });
+  }
+};
+
 module.exports = {
   createBook,
   getAllBooks,
   getBookById,
   updateBook,
   deleteBook,
+  searchBook,
 };
