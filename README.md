@@ -11,9 +11,10 @@ The Books API provides a comprehensive set of endpoints to interact with a colle
 - [Endpoint Version-1](#endpoint-version-1)
 - [Drawbacks of Not Using Authentication](#drawbacks-of-not-using-authentication)
 - [Decisions and Assumptions](#decisions-and-assumptions)
-- [Books API Version 2](#books-api-version-2)
+- [Books API Version-2](#books-api-version-2)
   - [New Features](#new-features)
   - [Endpoints Version-2](#endpoints-version-2)
+- [Deployment Process](#deployment-process)
 
 ## Getting Started
 
@@ -139,7 +140,7 @@ During the development process of my API, I made several key decisions and assum
 
 These decisions have been integral in shaping the capabilities and user-friendliness of my API. While they were based on assumptions and requirements, I will continue to validate and refine these features through testing and user feedback to ensure they meet user expectations.
 
-# Books API Version 2
+# Books API Version-2
 
 Welcome to the Books API Version 2 documentation. This API offers an enhanced experience for managing books and user interactions.
 
@@ -185,4 +186,28 @@ Search for books in the database
 - **Parameters:**
   - `query` (string) - The search query.
 
----
+## Deployment Process
+
+To deploy your Node.js application with automatic updates from your GitHub repository to Cyclic.sh, follow these steps:
+
+**Step 1: Set Up a Cyclic.sh Account**
+
+Sign up for a Cyclic.sh account if you haven't already. Cyclic.sh is a powerful CI/CD platform designed for seamless deployment.
+
+**Step 2: Connect Your GitHub Repository**
+
+Within your Cyclic.sh account, establish a connection to your GitHub repository. This enables Cyclic.sh to access your repository and deploy changes automatically.
+
+**Step 3: Push Code Changes to GitHub**
+
+Make the necessary changes to your Node.js application, commit them, and then push these changes to your GitHub repository. Cyclic.sh will continuously monitor your repository for any updates.
+
+**Step 4: Automatic Deployment**
+
+Once changes are pushed to your GitHub repository, Cyclic.sh detects these modifications and automatically initiates the build and deployment process. This automated process updates your application on the Cyclic.sh server.
+
+**Step 5: Access Your Deployed Application**
+
+Following the completion of the deployment process, your Node.js application is up to date and accessible on the Cyclic.sh server. You can access it via the provided URL.
+
+This streamlined deployment workflow ensures that your application is always kept current without manual intervention.
